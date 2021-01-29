@@ -1,8 +1,5 @@
 from django.db import models
-
-storage_url = "http://localhost:8090/store"
-audio_url = "/audio"
-image_url = "/image"
+from django.conf import settings
 
 
 # Create your models here.
@@ -20,7 +17,7 @@ class Track(models.Model):
     def as_json(self):
         creation_date_iso = "" if (self.creation_date is None) else self.creation_date.isoformat()
         return dict(
-            id=self.id, link=storage_url + audio_url + str(self.link), name=self.name,
+            id=self.id, link=settings.AUDIO_URL + str(self.link), name=self.name,
             description=self.description, creationDate=creation_date_iso, isActive=self.is_active)
 
 
@@ -37,7 +34,7 @@ class Picture(models.Model):
     def as_json(self):
         creation_date_iso = "" if (self.creation_date is None) else self.creation_date.isoformat()
         return dict(
-            id=self.id, link=storage_url + image_url + str(self.link), description=self.description,
+            id=self.id, link=settings.IMAGE_URL + str(self.link), description=self.description,
             creationDate=creation_date_iso, isActive=self.is_active)
 
 
