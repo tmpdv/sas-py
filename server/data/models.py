@@ -1,5 +1,4 @@
 from django.db import models
-from django.conf import settings
 
 
 # Create your models here.
@@ -14,12 +13,6 @@ class Track(models.Model):
         return f"Track[id={self.id}, name={self.name}, link='{self.link}', creation_date={self.creation_date}, " \
                + ("ACTIVE" if self.is_active else "NOT ACTIVE") + "]"
 
-    def as_json(self):
-        creation_date_iso = "" if (self.creation_date is None) else self.creation_date.isoformat()
-        return dict(
-            id=self.id, link=settings.AUDIO_URL + str(self.link), name=self.name,
-            description=self.description, creationDate=creation_date_iso, isActive=self.is_active)
-
 
 class Picture(models.Model):
     link = models.CharField(max_length=150)
@@ -31,12 +24,6 @@ class Picture(models.Model):
         return f"Picture[id={self.id}, link='{self.link}', creation_date={self.creation_date}, " \
                + ("ACTIVE" if self.is_active else "NOT ACTIVE") + "]"
 
-    def as_json(self):
-        creation_date_iso = "" if (self.creation_date is None) else self.creation_date.isoformat()
-        return dict(
-            id=self.id, link=settings.IMAGE_URL + str(self.link), description=self.description,
-            creationDate=creation_date_iso, isActive=self.is_active)
-
 
 class TextType(models.Model):
     name = models.CharField(max_length=20)
@@ -45,9 +32,6 @@ class TextType(models.Model):
     def __str__(self):
         return f"TextType[id={self.id}, name={self.name}, " \
                + ("ACTIVE" if self.is_active else "NOT ACTIVE") + "]"
-
-    def as_json(self):
-        return dict(id=self.id, name=self.name, isActive=self.is_active)
 
 
 class Text(models.Model):
@@ -61,9 +45,3 @@ class Text(models.Model):
         return f"Text[id={self.id}, title={self.title}, type={self.text_type.name}, " \
                f"creation_date={self.creation_date}, " \
                + ("ACTIVE" if self.is_active else "NOT ACTIVE") + "]"
-
-    def as_json(self):
-        creation_date_iso = "" if (self.creation_date is None) else self.creation_date.isoformat()
-        return dict(
-            id=self.id, value=self.value, textType=self.text_type.name,
-            creationDate=creation_date_iso, isActive=self.is_active)
