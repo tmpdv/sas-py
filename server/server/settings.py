@@ -26,7 +26,7 @@ SECRET_KEY = '4h=1-$3a6ui1s#+60-2p46ndf88)7486*n1b%7gg@e$=m)c=3j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'server.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'app/build'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,6 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'app/build/static'
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'storage', 'files')
 AUDIO_ROOT = os.path.join(MEDIA_ROOT, 'audio')
