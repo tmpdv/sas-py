@@ -9,13 +9,12 @@ import Grid from "@material-ui/core/Grid";
 import { createMuiTheme } from "@material-ui/core/styles";
 import grey from "@material-ui/core/colors/grey";
 
-import background from "./image/les_tuman_derevia_131999_1920x1080.jpg";
 import TabPanel from "./TabPanel";
 
 
 const useStyles = makeStyles({
     main: {
-      background: `url(${background})`,
+      background: `url(https://docs.google.com/uc?export=download&id=1_rsIQL5vscxsNAItQ3c4FTRvInz0dQf_)`,
       backgroundAttachment: "fixed",
       backgroundPosition: "center",
       backgroundSize: "cover",
@@ -40,7 +39,8 @@ const MainPage = () => {
         useEffect(() => {
             fetch("/data/tracks")
             .then(response => response.json())
-            .then(page => setTracks(page.elementList))
+            .then(tracks => setTracks(tracks))
+            // .then(page => setTracks(page.elementList))
         }, []);
 
   const [images, setImages] = useState();
