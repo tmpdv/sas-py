@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/sas-py/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/sas-py/static/js/main.15ff9c1c.chunk.js",
+    "main.js.map": "/sas-py/static/js/main.15ff9c1c.chunk.js.map",
+    "runtime-main.js": "/sas-py/static/js/runtime-main.b4fcee4d.js",
+    "runtime-main.js.map": "/sas-py/static/js/runtime-main.b4fcee4d.js.map",
+    "static/js/2.3dcda0b5.chunk.js": "/sas-py/static/js/2.3dcda0b5.chunk.js",
+    "static/js/2.3dcda0b5.chunk.js.map": "/sas-py/static/js/2.3dcda0b5.chunk.js.map",
+    "static/js/3.b15428ec.chunk.js": "/sas-py/static/js/3.b15428ec.chunk.js",
+    "static/js/3.b15428ec.chunk.js.map": "/sas-py/static/js/3.b15428ec.chunk.js.map",
+    "index.html": "/sas-py/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/sas-py/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.3dcda0b5.chunk.js.LICENSE.txt": "/sas-py/static/js/2.3dcda0b5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b4fcee4d.js",
+    "static/js/2.3dcda0b5.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.15ff9c1c.chunk.js"
+  ]
+}
