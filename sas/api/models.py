@@ -10,7 +10,7 @@ class Track(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"Track[name={self.name}, link='{self.link}', creation_date={self.creation_date}, " \
+        return f"Track [name: {self.name}, link: '{self.link}', creation_date: {self.creation_date}, " \
                + ("ACTIVE" if self.is_active else "NOT ACTIVE") + "]"
 
 
@@ -19,7 +19,7 @@ class TextType(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"TextType[name={self.name}, " \
+        return f"TextType [name: {self.name}, " \
                + ("ACTIVE" if self.is_active else "NOT ACTIVE") + "]"
 
 
@@ -31,6 +31,6 @@ class Text(models.Model):
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"Text[title={self.title}, type={self.text_type.name}, " \
-               f"creation_date={self.creation_date}, " \
+        return f"Text[title: {self.title}, type: {self.text_type.name}, " \
+               f"creation_date: {self.creation_date}, " \
                + ("ACTIVE" if self.is_active else "NOT ACTIVE") + "]"
